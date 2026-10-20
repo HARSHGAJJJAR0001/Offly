@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+/* ── Dark theme (default) ────────────────────────────────────────────────────*/
+:root,
+[data-theme="dark"] {
+  --bg-primary: #060d1a;
+  --bg-secondary: #0d1528;
+  --bg-card: rgba(8, 14, 28, 0.92);
+  --bg-glass: rgba(255, 255, 255, 0.03);
+  --bg-glass-hover: rgba(255, 255, 255, 0.06);
+  --bg-input: rgba(255, 255, 255, 0.04);
+
+  --border-color: rgba(255, 255, 255, 0.07);
+  --border-hover: rgba(255, 255, 255, 0.12);
+  --border-input: rgba(255, 255, 255, 0.1);
+  --divider: rgba(255, 255, 255, 0.05);
+
+  --text-primary: #f0fdf4;
+  --text-secondary: #e2e8f0;
+  --text-muted: rgba(148, 163, 184, 0.8);
+  --text-faint: rgba(100, 116, 139, 0.6);
+  --text-disabled: rgba(100, 116, 139, 0.4);
+
+  --accent-teal: #14b8a6;
+  --accent-purple: #8b5cf6;
+  --accent-blue: #6366f1;
+  --accent-amber: #f59e0b;
+
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.6);
+
+  --sidebar-bg: rgba(8, 13, 26, 0.97);
+  --navbar-bg: rgba(10, 15, 30, 0.85);
+
+  --chart-grid: rgba(255, 255, 255, 0.04);
+  --chart-axis: rgba(100, 116, 139, 0.5);
+  --tooltip-bg: rgba(10, 16, 32, 0.98);
+}
+
+/* ── Light theme ─────────────────────────────────────────────────────────────*/
+[data-theme="light"] {
+  --bg-primary: #f0f4f8;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --bg-glass: #ffffff;
+  --bg-glass-hover: #f8fafc;
+  --bg-input: #f1f5f9;
+
+  --border-color: rgba(0, 0, 0, 0.09);
+  --border-hover: rgba(0, 0, 0, 0.15);
+  --border-input: rgba(0, 0, 0, 0.12);
+  --divider: rgba(0, 0, 0, 0.07);
+
+  --text-primary: #0f172a;
+  --text-secondary: #1e293b;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+  --text-disabled: #cbd5e1;
+
+  --accent-teal: #0d9488;
+  --accent-purple: #7c3aed;
+  --accent-blue: #4f46e5;
+  --accent-amber: #d97706;
+
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+
+  --sidebar-bg: #ffffff;
+  --navbar-bg: rgba(255, 255, 255, 0.97);
+
+  --chart-grid: rgba(0, 0, 0, 0.06);
+  --chart-axis: #94a3b8;
+  --tooltip-bg: #ffffff;
+}
+
+/* ── Base ────────────────────────────────────────────────────────────────────*/
+body {
+  color: var(--text-secondary);
+  background: var(--bg-primary);
+}
+
+/* ── Input fixes for light mode ──────────────────────────────────────────────*/
+[data-theme="light"] input,
+[data-theme="light"] select,
+[data-theme="light"] textarea {
+  background: var(--bg-input) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-input) !important;
+}
+
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+  color: var(--text-faint) !important;
+}
+
+[data-theme="light"] select option {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────────────────*/
+[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #0d1528;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* ── Smooth theme transition ─────────────────────────────────────────────────*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+div,
+span,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+section,
+main,
+aside,
+nav,
+header {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.2s ease;
+}
+
+button,
+a {
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    color 0.15s ease, transform 0.2s ease, box-shadow 0.2s ease !important;
+}
